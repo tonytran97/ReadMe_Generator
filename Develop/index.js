@@ -35,6 +35,18 @@ const questions = [
         message: 'What are your test instructions',
         name: 'test',
       },
+      {
+        type: 'list',
+        message: 'Select an open source license',
+        choices: ['MIT', 'Apache', 'lgpl_2_1', 'MIT + file LICENSE', 'MIT/Apache-2.0', 'GPL'],
+        name: 'license',
+      },
+      {
+        type: 'list',
+        message: 'Select a color for your license badge',
+        choices: ['brightgreen', 'green', 'yellowgreen', 'yellow', 'orange', 'red', 'blue', 'lightgrey', 'blueviolet', 'ff69b4', '9cf'],
+        name: 'color',
+      },
 ];
 
 // TODO: Create a function to write README file
