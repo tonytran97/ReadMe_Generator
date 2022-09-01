@@ -38,7 +38,7 @@ const questions = [
       {
         type: 'list',
         message: 'Select an open source license',
-        choices: ['MIT', 'Apache', 'lgpl_2_1', 'MIT + file LICENSE', 'MIT/Apache-2.0', 'GPL'],
+        choices: ['MIT', 'Apache', 'lgpl_2_1', 'MIT + file LICENSE', 'MIT/Apache-2.0', 'GPL', 'none'],
         name: 'license',
       },
       {
