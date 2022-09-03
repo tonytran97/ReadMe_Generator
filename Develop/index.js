@@ -47,6 +47,16 @@ const questions = [
         choices: ['brightgreen', 'green', 'yellowgreen', 'yellow', 'orange', 'red', 'blue', 'lightgrey', 'blueviolet', 'ff69b4', '9cf'],
         name: 'color',
       },
+      {
+        type: 'input',
+        message: 'Github username',
+        name: 'username',
+      },
+      {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email',
+      },
 ];
 
 // TODO: Create a function to write README file
