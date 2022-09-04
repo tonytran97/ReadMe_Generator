@@ -1,16 +1,36 @@
-var renLicenseBadge = '';
 var licenseLink = 'none';
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
-if (data.license === 'none') {
-  return;
-} else {
-  let genLicense = `![license](https://img.shields.io/badge/license-${data.license}-${data.color})`;
-  renLicenseBadge = genLicense;
-  renderLicenseLink(data);
-}}
+  switch(data.license) {
+    case 'MIT': 
+    renderLicenseLink(data);
+    return `
+  ![license](https://img.shields.io/badge/license-${data.license}-${data.color})`;
+    case 'Apache-2.0':
+    renderLicenseLink(data);
+    return `
+  ![license](https://img.shields.io/badge/license-Apache--2.0-${data.color})`;
+    case 'BSD-3-Clause':
+    renderLicenseLink(data);
+    return `
+  ![license](https://img.shields.io/badge/license-BSD--3--Clause-${data.color})`;
+    case 'GPL-3.0':
+    renderLicenseLink(data);
+    return `
+  ![license](https://img.shields.io/badge/license-GPL--3.0-${data.color})`;
+    case 'none':
+    return "";
+  }
+// if (data.license === 'none') {
+//   return;
+// } else if (data.license === 'MIT') {
+//   let genLicense = `![license](https://img.shields.io/badge/license-${data.license}-${data.color})`;
+//   renLicenseBadge = genLicense;
+//   renderLicenseLink(data);
+// }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -86,8 +106,7 @@ return ``
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  renderLicenseBadge(data);
-  return `${renLicenseBadge}\n
+return `${renderLicenseBadge(data)}\n
 # ${data.title}\n
 ## Description\n 
 ---\n
@@ -110,9 +129,11 @@ ${data.contribution}\n
 ---\n
 ${data.test}\n
 ## License\n
+---\n
 License: ${licenseLink}\n
 ${renderLicenseSection(data)}\n
 ## Questions?\n
+---\n
 Here are ways to reach out to me...\n
 [GitHub](https://github.com/${data.username})\n
 ${data.email}`
