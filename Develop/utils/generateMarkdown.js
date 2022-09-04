@@ -3,33 +3,23 @@ var licenseLink = 'none';
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
+  renderLicenseLink(data);
   switch(data.license) {
     case 'MIT': 
-    renderLicenseLink(data);
     return `
   ![license](https://img.shields.io/badge/license-${data.license}-${data.color})`;
     case 'Apache-2.0':
-    renderLicenseLink(data);
     return `
   ![license](https://img.shields.io/badge/license-Apache--2.0-${data.color})`;
     case 'BSD-3-Clause':
-    renderLicenseLink(data);
     return `
   ![license](https://img.shields.io/badge/license-BSD--3--Clause-${data.color})`;
     case 'GPL-3.0':
-    renderLicenseLink(data);
     return `
   ![license](https://img.shields.io/badge/license-GPL--3.0-${data.color})`;
     case 'none':
     return "";
   }
-// if (data.license === 'none') {
-//   return;
-// } else if (data.license === 'MIT') {
-//   let genLicense = `![license](https://img.shields.io/badge/license-${data.license}-${data.color})`;
-//   renLicenseBadge = genLicense;
-//   renderLicenseLink(data);
-// }
 }
 
 // TODO: Create a function that returns the license link
@@ -46,9 +36,9 @@ function renderLicenseLink(data) {
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
   switch(data.license) {
-    case 'MIT': 
-    return `
-    Copyright <YEAR> <COPYRIGHT HOLDER>
+case 'MIT': 
+return `
+Copyright [yyyy] [name of copyright owner]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -72,7 +62,7 @@ See the License for the specific language governing permissions and
 limitations under the License.`;
 case 'BSD-3-Clause': 
 return `
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright [yyyy] [name of copyright owner]
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -114,15 +104,19 @@ ${data.description}\n
 ## Table of Contents\n
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contribute](#contribute)
+- [Test](#tests)
+- [License](#license)
+- [Questions](#questions)
 - [Credits](#credits)
-- [Test](#tests)\n
 ## Installation\n
 ---\n
 ${data.instructions}\n
 ## Usage\n
 ---\n
 ${data.usage}\n
-## Credits\n
+[This is where you would also add in screenshots or demonstrations]\n
+## Contribute\n
 ---\n
 ${data.contribution}\n
 ## Tests\n
@@ -134,9 +128,11 @@ License: ${licenseLink}\n
 ${renderLicenseSection(data)}\n
 ## Questions?\n
 ---\n
-Here are ways to reach out to me...\n
+Here are ways to reach out to me for questions about this application...\n
 [GitHub](https://github.com/${data.username})\n
-${data.email}`
+${data.email}\n
+## Credits\n
+${data.credit}`
 }
 
 module.exports = generateMarkdown;

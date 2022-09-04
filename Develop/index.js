@@ -7,32 +7,32 @@ const genMarkdown = require('./utils/generateMarkdown');
 const questions = [
     {
         type: 'input',
-        message: 'What is your project title?',
+        message: 'What is your application/project title?',
         name: 'title',
       },
       {
         type: 'input',
-        message: 'Provide a short description of your project?',
+        message: 'Provide a short description of your application/project',
         name: 'description',
       },
       {
         type: 'input',
-        message: 'What are your installation instructions?',
+        message: 'What are the installation instructions?',
         name: 'instructions',
       },
       {
         type: 'input',
-        message: 'Insert screenshots and/or demonstrations here',
+        message: 'Provide instructions about the usage of the application/project',
         name: 'usage',
       },
       {
         type: 'input',
-        message: 'What are your contribution guidelines?',
+        message: 'What are your guidelines if any other developers would like to contribute',
         name: 'contribution',
       },
       {
         type: 'input',
-        message: 'What are your test instructions',
+        message: 'Provide the tests of your application/project if you had any',
         name: 'test',
       },
       {
@@ -49,14 +49,25 @@ const questions = [
       },
       {
         type: 'input',
-        message: 'Github username',
+        message: 'Provide your GitHub username for contact purposes',
         name: 'username',
       },
       {
         type: 'input',
-        message: 'What is your email?',
+        message: 'Provide your email for contact purposes',
         name: 'email',
       },
+      {
+        type: 'input',
+        message: 'Feel free to list out anyone who helped out with this application/project',
+        name: 'credit',
+      },
+      {
+        type: 'list',
+        message: 'This README generator only serves the purpose of providing a basic outline of the file. Make sure to review the file and make changes as needed.',
+        choices: ['I will make sure to do that'],
+        name: 'end',
+      }
 ];
 
 // TODO: Create a function to write README file
