@@ -18,9 +18,8 @@ if (data.license === 'none') {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-    let genLicenseLink = `[test](https://img.shields.io/badge/license-${data.license}-${data.color})`;
+    let genLicenseLink = `[${data.license}](https://opensource.org/licenses/${data.license})`;
     licenseLink = genLicenseLink;
-    ;
   }
 
 // TODO: Create a function that returns the license section of README
@@ -31,7 +30,6 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   renderLicenseBadge(data);
   return `${renLicenseBadge}\n
-  ${licenseLink}\n
 # ${data.title}\n
 ## Description\n 
 ---\n
@@ -54,7 +52,7 @@ ${data.contribution}\n
 ---\n
 ${data.test}\n
 ## License\n
-This application is licensed under ${data.license}\n
+This application is licensed under ${licenseLink}\n
 ## Questions?\n
 Here are ways to reach out to me...\n
 [GitHub](https://github.com/${data.username})\n
